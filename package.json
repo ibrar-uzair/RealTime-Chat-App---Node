@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "name": "realtime-chat-app---node",
+  "description": "This is a realtime chat app developed using node, express, mongodb, and socket.io",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibrar-uzair/RealTime-Chat-App---Node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ibrar-uzair/RealTime-Chat-App---Node/issues"
+  },
+  "homepage": "https://github.com/ibrar-uzair/RealTime-Chat-App---Node#readme"
+}
