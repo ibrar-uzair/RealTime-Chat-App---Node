@@ -1,12 +1,24 @@
 {
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^3.1.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-handlebars": "^6.0.2",
+    "express-session": "^1.17.2",
+    "express-sessions": "^1.0.6",
+    "express-validator": "^6.13.0",
+    "mongodb": "^4.2.1",
+    "mongoose": "^6.1.0",
+    "multer": "^1.4.4",
     "nodemon": "^2.0.15"
   },
   "name": "realtime-chat-app---node",
   "description": "This is a realtime chat app developed using node, express, mongodb, and socket.io",
   "version": "1.0.0",
   "main": "app.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
