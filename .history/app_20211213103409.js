@@ -38,8 +38,6 @@ app.use(chatRoutes);
 
 app.use(errors.pageNotFound);
 
-const users = {};
-
 mongoose
   .connect(MONGODB_URI)
   .then((result) => {
@@ -48,18 +46,6 @@ mongoose
     const io = require("socket.io")(server);
     io.on("connection", (socket) => {
       console.log("Client connected");
-      socket.on("new-user-connected", (name) => {
-        console.log("New user", name);
-        users[socket.id] = name;
-        socket.broadcast.emit("user-joined", name);
-      });
-
-      socket.on("send", (message) => {
-        socket.broadcast.emit("recieve", {
-          message: message,
-          name: users[socket.id],
-        });
-      });
     });
   })
   .catch((err) => {

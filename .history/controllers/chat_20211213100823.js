@@ -1,5 +1,5 @@
 exports.displayProfile = (req, res, next) => {
-  const user = req.session.user;
+  user = req.session.user;
   console.log(user);
   res.status(404).render("chat/displayProfile");
 };

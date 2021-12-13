@@ -48,16 +48,16 @@ mongoose
     const io = require("socket.io")(server);
     io.on("connection", (socket) => {
       console.log("Client connected");
-      socket.on("new-user-connected", (name) => {
-        console.log("New user", name);
+      socket.on("new user-connected", (name) => {
+        console.log(name);
         users[socket.id] = name;
-        socket.broadcast.emit("user-joined", name);
+        socket.broadcast.emit("User joined");
       });
 
       socket.on("send", (message) => {
         socket.broadcast.emit("recieve", {
           message: message,
-          name: users[socket.id],
+          name: user[socket.id],
         });
       });
     });

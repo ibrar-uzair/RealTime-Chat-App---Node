@@ -57,7 +57,7 @@ mongoose
       socket.on("send", (message) => {
         socket.broadcast.emit("recieve", {
           message: message,
-          name: users[socket.id],
+          name: user[socket.id],
         });
       });
     });

@@ -13,7 +13,8 @@
     "mongodb": "^4.2.1",
     "mongoose": "^6.1.0",
     "multer": "^1.4.4",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "socket.io": "^4.4.0"
   },
   "name": "realtime-chat-app---node",
   "description": "This is a realtime chat app developed using node, express, mongodb, and socket.io",

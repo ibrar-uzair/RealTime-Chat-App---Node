@@ -49,15 +49,15 @@ mongoose
     io.on("connection", (socket) => {
       console.log("Client connected");
       socket.on("new-user-connected", (name) => {
-        console.log("New user", name);
+        console.log(name);
         users[socket.id] = name;
-        socket.broadcast.emit("user-joined", name);
+        socket.broadcast.emit("User joined");
       });
 
       socket.on("send", (message) => {
         socket.broadcast.emit("recieve", {
           message: message,
-          name: users[socket.id],
+          name: user[socket.id],
         });
       });
     });

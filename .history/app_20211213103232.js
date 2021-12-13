@@ -38,29 +38,12 @@ app.use(chatRoutes);
 
 app.use(errors.pageNotFound);
 
-const users = {};
-
 mongoose
   .connect(MONGODB_URI)
   .then((result) => {
     console.log("Server started at port number 3000");
     const server = app.listen(3000);
     const io = require("socket.io")(server);
-    io.on("connection", (socket) => {
-      console.log("Client connected");
-      socket.on("new-user-connected", (name) => {
-        console.log("New user", name);
-        users[socket.id] = name;
-        socket.broadcast.emit("user-joined", name);
-      });
-
-      socket.on("send", (message) => {
-        socket.broadcast.emit("recieve", {
-          message: message,
-          name: users[socket.id],
-        });
-      });
-    });
   })
   .catch((err) => {
     console.log(err);
